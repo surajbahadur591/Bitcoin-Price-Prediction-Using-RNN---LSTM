@@ -24,3 +24,19 @@ pip install matplotlib
 2. Prepare data for training and testing.
 3. Predict the price of crptocurrency using LSTM neural network (deep learning).
 4. Visualize the prediction results.
+
+### 1. Getting real-time crptocurrency data(bitcoin)
+You can collect the current data for Bitcoin from [Yahoo Finance](https://in.finance.yahoo.com/quote/BTC-USD/history?p=BTC-USD)
+
+### 2. Prepare data for training and testing.
+You can preprocess the data before dividing it into traning and testing
+```
+data_training = data[data['Date']< '2020-01-01'].copy()
+data_training
+```
+
+```
+data_test = data[data['Date']> '2020-01-01'].copy()
+data_test
+```
+###
