@@ -18,3 +18,9 @@ pip install tensorflow
 pip install pandas
 pip install matplotlib
 ```
+### --------------------------------------------------------------------------
+we will be going through a four step process to predict cryptocurrency prices:
+1. Getting real-time crptocurrency data(bitcoin).
+2. Prepare data for training and testing.
+3. Predict the price of crptocurrency using LSTM neural network (deep learning).
+4. Visualize the prediction results.
