@@ -39,4 +39,28 @@ data_training
 data_test = data[data['Date']> '2020-01-01'].copy()
 data_test
 ```
-###
+### 3. Predict the price of crptocurrency using LSTM neural network (deep learning)
+```
+regressor = Sequential()
+regressor.add(LSTM(units = 60, activation = 'relu', return_sequences = True, input_shape = (X_train.shape[1], 5)))
+regressor.add(Dropout(0.2))
+regressor.compile(optimizer = 'adam', loss='mean_absolute_error')
+regressor.fit(X_train, Y_train, epochs = 20, batch_size =50)
+```
+```
+Y_pred = regressor.predict(X_test)
+Y_pred, Y_test
+```
+
+### 4. Visualize the prediction results.
+```
+plt.figure(figsize=(14,5))
+plt.plot(Y_test, color = 'red', label = 'Real Bitcoin Price')
+plt.plot(Y_pred, color = 'green', label = 'Predicted Bitcoin Price')
+plt.title('Bitcoin Price Prediction using RNN-LSTM')
+plt.xlabel('Time')
+plt.ylabel('Price')
+plt.legend()
+plt.show()
+```
+
